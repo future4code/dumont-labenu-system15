@@ -9,9 +9,11 @@ const app: Express = express()
 app.use(express.json())
 app.use(cors())
 
+// Endpoints Functions
+import {createStudents} from "./endpoint/createStudent"
 
 // app.get("/", )
-
+app.post("/student", createStudents)
 
 // Server
 const server = app.listen(process.env.PORT || 3003, () => {
