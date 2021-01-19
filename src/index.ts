@@ -11,9 +11,11 @@ app.use(cors())
 
 // Endpoints Functions
 import {createStudents} from "./endpoint/createStudent"
+import { addStudentToClass } from "./endpoint/addStudentToClass"
 
 // app.get("/", )
 app.post("/student", createStudents)
+app.put("/student/:student_id", addStudentToClass)
 
 // Server
 const server = app.listen(process.env.PORT || 3003, () => {
