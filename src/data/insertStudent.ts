@@ -10,7 +10,8 @@ export const insertStudent = async (student: Students): Promise<void> => {
             .insert({
                 student_name: student.student_name,
                 student_email: student.student_email,
-                student_birth_date: student.student_birth_date
+                student_birth_date: student.student_birth_date,
+                mission_id: student.mission_id
             })
             .into("Students")
 

@@ -10,16 +10,14 @@ const { formatStringDate } = require('../utilities/dateFunctions');
 // Database function
 export const createStudents = async (req: Request, res: Response): Promise<any> => {
     try {
-
-        // const { title, description, deadline, status, creatorUserId} = req.body;
-
         const result = {
             student_name: req.body.student_name,
             student_email: req.body.student_email,
-            student_birth_date: await formatStringDate(req.body.student_birth_date)
+            student_birth_date: await formatStringDate(req.body.student_birth_date),
+            mission_id: req.body.mission_id
         }
 
-    //Validação todos os campos obrigatórios
+    //validation of mandatory fields
         const keys = Object.keys(req.body)
 
         for (const key of keys) {
