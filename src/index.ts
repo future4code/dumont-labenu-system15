@@ -13,9 +13,12 @@ app.use(cors())
 import { createStudents } from "./endpoint/createStudent"
 import { createMission } from "./endpoint/createMission"
 import { createTeacher } from "./endpoint/createTeacher"
+import { addStudentToClass } from "./endpoint/addStudentToClass"
+
 
 // Endpoints
 app.post("/student", createStudents)
+app.put("/student/:n startstudent_id", addStudentToClass)
 app.post("/mission", createMission)
 app.post("/teacher", createTeacher)
 
