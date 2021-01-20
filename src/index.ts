@@ -11,10 +11,11 @@ app.use(cors())
 
 // Endpoints Functions
 import {createStudents} from "./endpoint/createStudent"
+import { createMission } from "./endpoint/createMission"
 
 // app.get("/", )
 app.post("/student", createStudents)
-
+app.post("/mission", createMission)
 // Server
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
