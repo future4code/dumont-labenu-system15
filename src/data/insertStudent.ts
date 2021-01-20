@@ -17,6 +17,6 @@ export const insertStudent = async (student: Students): Promise<void> => {
         console.log(`O estudante, ${student.student_name} foi criado com sucesso`);
 
     } catch (error) {
-        throw new Error(error.sqlMessage || error.message)
+        throw new Error(error.sqlMessage)
     }
 }

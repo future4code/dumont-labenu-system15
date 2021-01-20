@@ -1,13 +1,13 @@
 // Types from Express.js library
 import { Request, Response } from 'express'
 
+// Type from src/type
+import { Teacher } from '../type/teacher'
+
 // Query functions
 import { insertTeacher } from '../data/insertTeacher'
 
-// Type
-import { Teacher } from '../type/teacher'
-
-// Utility
+// Utilities
 import { verifyBodyKeys, verifyString } from '../utility/verifier'
 import { checkDate } from '../utility/checkDate'
 import { formatDate } from '../utility/formatDate'
@@ -17,12 +17,11 @@ export const createTeacher = async (req: Request, res: Response): Promise<void> 
     const validKeys = ["name", "email", "birthdate"]
 
     try {
+        res.statusCode = 422
         verifyBodyKeys(req.body, validKeys)
         verifyString(req.body)
 
-        if(!checkDate(req.body.birthdate)) {
-            throw new Error("Please provide the birthdate in the format DD/MM/YYYY")
-        }
+        checkDate(req.body.birthdate)
 
         const newTeacher: Teacher = {
             teacher_name: req.body.name,

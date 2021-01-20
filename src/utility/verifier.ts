@@ -19,14 +19,14 @@ export const verifyNumber = (id: any): void => {
 
 export const verifyBodyKeys = (reqObj: any, validKeys: string[]): void => {
     if (Object.keys(reqObj).length < validKeys.length) {
-        throw new Error("Missing key(s) in requisition body.")
+        throw new Error(`Missing key(s) in requisition body. Valid keys are: ${validKeys.join(", ")}.`)
     } else if (Object.keys(reqObj).length > validKeys.length) {
-        throw new Error("Found extra key(s) in requisition body.")
+        throw new Error(`Found extra key(s) in requisition body. Valid keys are: ${validKeys.join(", ")}.`)
     }
 
     for (let key in reqObj) {
         if (!validKeys.includes(key)) {
-            throw new Error("Invalid key in requisition body.")
+            throw new Error(`Invalid key in requisition body. Valid keys are: ${validKeys.join(", ")}.`)
         }
 
         if (!reqObj[key]) {

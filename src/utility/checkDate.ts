@@ -1,9 +1,7 @@
-export const checkDate = (date: string): boolean => {
+export const checkDate = (date: string): void => {
     const userPattern = date.includes('/')
 
-    if (userPattern) {
-        return true
-    } else {
-        return false
+    if (!userPattern) {
+        throw new Error("Please provide dates in the format DD/MM/YYYY.")
     }
 }

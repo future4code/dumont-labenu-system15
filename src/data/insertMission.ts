@@ -12,6 +12,6 @@ export const insertMission = async (mission: Mission): Promise<void> => {
 
 
     } catch (error) {
-        throw new Error(error.sqlMessage || error.message)
+        throw new Error(error.sqlMessage)
     }
 }

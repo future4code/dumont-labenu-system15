@@ -12,6 +12,8 @@ export const insertTeacher = async (teacher: Teacher): Promise<void> => {
 
             
     } catch (error) {
-        throw new Error(error.sqlMessage || error.message)
+        console.log(error)
+
+        throw new Error(error.sqlMessage)
     }
 }
