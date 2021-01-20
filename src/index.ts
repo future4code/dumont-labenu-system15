@@ -10,12 +10,14 @@ app.use(express.json())
 app.use(cors())
 
 // Endpoints Functions
-import {createStudents} from "./endpoint/createStudent"
+import { createStudents } from "./endpoint/createStudent"
+import { createMission } from "./endpoint/createMission"
 import { addStudentToClass } from "./endpoint/addStudentToClass"
 
-// app.get("/", )
+// Endpoints
 app.post("/student", createStudents)
-app.put("/student/:student_id", addStudentToClass)
+app.put("/student/:n startstudent_id", addStudentToClass)
+app.post("/mission", createMission)
 
 // Server
 const server = app.listen(process.env.PORT || 3003, () => {
@@ -23,6 +25,6 @@ const server = app.listen(process.env.PORT || 3003, () => {
        const address = server.address() as AddressInfo
        console.log(`Server is running in http://localhost:${address.port}`)
     } else {
-       console.error(`Failure upon starting server.`)
+       console.error(`Failure upoing server.`)
     }
  })
