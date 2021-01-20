@@ -1,8 +1,8 @@
 // Types from Express.js library
 import { Request, Response } from 'express'
 import { Mission } from '../type/mission'
-import { checkDate } from '../utilities/checkDate'
-import { formatDate } from '../utilities/formatDate'
+import { checkDate } from '../utility/checkDate'
+import { formatDate } from '../utility/formatDate'
 
 // Query functions
 import { insertMission } from '../data/insertMission'

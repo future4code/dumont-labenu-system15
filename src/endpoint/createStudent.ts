@@ -5,7 +5,7 @@ import { Request, Response } from 'express'
 import {insertStudent} from '../data/insertStudent'
 
 //Date format function
-const { formatStringDate } = require('../utilities/dateFunctions');
+const { formatStringDate } = require('../utility/dateFunctions');
 
 // Database function
 export const createStudents = async (req: Request, res: Response): Promise<any> => {
