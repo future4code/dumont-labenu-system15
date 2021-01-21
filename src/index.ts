@@ -15,6 +15,7 @@ import { createMission } from "./endpoint/createMission"
 import { createTeacher } from "./endpoint/createTeacher"
 import { addStudentToClass } from "./endpoint/addStudentToClass"
 import { getStudentAge } from "./endpoint/getStudentAge"
+import { addTeacherToClass } from "./endpoint/addTeacherToClass"
 
 // Endpoints
 app.post("/student", createStudents)
@@ -22,6 +23,7 @@ app.put("/student/:n startstudent_id", addStudentToClass)
 app.get("/student/:id", getStudentAge)
 app.post("/mission", createMission)
 app.post("/teacher", createTeacher)
+app.put("/teacher/:id", addTeacherToClass)
 
 
 // Server
