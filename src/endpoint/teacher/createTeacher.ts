@@ -2,15 +2,15 @@
 import { Request, Response } from 'express'
 
 // Type from src/type
-import { Teacher } from '../type/teacher'
+import { Teacher } from '../../type/teacher'
 
 // Query functions
-import { insertTeacher } from '../data/insertTeacher'
+import { insertTeacher } from '../../data/teacher/insertTeacher'
 
 // Utilities
-import { verifyBodyKeys, verifyString } from '../utility/verifier'
-import { checkDate } from '../utility/checkDate'
-import { formatDate } from '../utility/formatDate'
+import { verifyBodyKeys, verifyString } from '../../utility/verifier'
+import { checkDate } from '../../utility/checkDate'
+import { formatDate } from '../../utility/formatDate'
 
 // Database function
 export const createTeacher = async (req: Request, res: Response): Promise<void> => {

@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 
 
 // Query functions
-import { selectStudentBDate } from '../data/selectStudentBDate';
+import { selectStudentBDate } from '../../data/student/selectStudentBDate';
 
 // Utilities
 import dayjs from 'dayjs'

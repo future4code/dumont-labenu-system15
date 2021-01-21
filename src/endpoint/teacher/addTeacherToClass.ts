@@ -2,10 +2,10 @@
 import { Request, Response } from 'express'
 
 // Query functions
-import { updateTeacherToClass } from '../data/updateTeacherToClass'
+import { updateTeacherToClass } from '../../data/teacher/updateTeacherToClass'
 
 // Utilities
-import { verifyBodyKeys, verifyNumber } from '../utility/verifier'
+import { verifyBodyKeys, verifyNumber } from '../../utility/verifier'
 
 
 // Database function

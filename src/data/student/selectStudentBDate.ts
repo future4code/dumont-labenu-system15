@@ -1,6 +1,6 @@
 // Database connection
-import { Students } from "../type/students";
-import { connection } from "./connection";
+import { Students } from "../../type/students";
+import { connection } from "../connection";
 
 export const selectStudentBDate = async (id: number): Promise<Students> => {
     try {

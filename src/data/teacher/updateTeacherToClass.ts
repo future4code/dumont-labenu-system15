@@ -1,5 +1,5 @@
 // Database connection
-import { connection } from "./connection";
+import { connection } from "../connection";
 
 export const updateTeacherToClass = async (teacher: {
     mission_id: number,
