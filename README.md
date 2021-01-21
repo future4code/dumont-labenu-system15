@@ -1,33 +1,82 @@
-## LabenuSystem:
+# LabenuSystem:
 
-Você estuda na Labenu_ há tanto tempo que já parecem anos, não é? Então, hoje, vamos pedir para criar um sistema que represente o básico da nossa organização. 
+## **POST** Create Student
 
-Ele deve possuir, ao menos, as 3 entidades importantes:
+**Path:** `/student`
 
-1. Estudantes 
+**Body:**
 
-    Representa estudantes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e os principais hobbies dele. 
+```json
+{
+    "student_name": "Billi",
+    "student_email": "bi@li.com",
+    "student_birth_date": "10/10/2000"
+}
+```
 
-2. Docente
+## **POST** Create Teacher
 
-    Representa docentes da nossa instituição. Eles devem possuir: id, nome, email, data de nascimento e todas as especialidades dele. Há 7 especialidades: React, Redux, CSS, Testes, Typescript, Programação Orientada a Objetos e Backend
+**Path:** `/teacher`
 
-3. Turma
+**Body:**
 
-    Toda turma é composta das seguintes características: id, nome, data de início, data de término, lista de professores responsáveis, uma lista de alunos e módulo atual em que a turma está.
+```json
+{
+    bruno vc que me diga
+}
+```
 
-    O módulo pode assumir os valores de 1 a 7 ou `undefined`, indicando que as aulas dessa turma ainda não começaram. Para esse exercício, vamos considerar que existam dois tipos de turma: integral ou noturna. Há uma restrição para o nome das turmas noturnas: tem que terminar com `-na-night`.
+## **POST** Create Mission
 
-As funcionalidades básicas são:
+**Path:** `/mission`
 
-→ Criar estudante;
+**Body:**
 
-→ Criar docente;
+```json
+{
+    "name": "Porto Velho",
+    "startDate": "08/04/2021",
+    "endDate": "10/10/2021"
+}
+```
+opcional> "module": 1
 
-→ Criar turma;
+## **PUT** Add Student to Class
+**Path:** `/student/:id`
 
-→ Adicionar estudante na turma;
+**Path Param**: id do estudante
 
-→ Adicionar docente na turma;
+**Body:**
 
-→ Pegar a idade de algum estudante a partir do id
+```json
+{
+    didi vc que me diga
+}
+```
+
+## **PUT** Add Teacher to Class
+**Path:** `/teacher/:id`
+
+**Path Param**: id do docente
+
+**Body:**
+
+```json
+{
+    bruno vc que me diga
+}
+```
+
+## **GET** Student Age By Id
+**Path:** `/student/:id`
+
+**Path Param**: id do estudante
+
+**Body de Resposta:**
+
+```json
+{
+    "studentName": "Didi",
+    "age": "21 years"
+}
+```

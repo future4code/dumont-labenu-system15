@@ -28,8 +28,8 @@ export const createMission = async (req: Request, res: Response): Promise<any> =
         const newMission: Mission = {
             mission_name: req.body.name as string,
             start_date: formatDate(req.body.startDate),
-            end_date: formatDate(req.body.endDate)
-            // module: Number(req.body.module) || 1
+            end_date: formatDate(req.body.endDate),
+            module: Number(req.body.module) || 1
         }
 
         await insertMission(newMission)

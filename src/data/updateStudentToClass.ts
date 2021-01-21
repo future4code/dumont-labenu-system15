@@ -11,6 +11,6 @@ export const updateStudentToClass = async (student: {
             .where("student_id", student.student_id)
 
     } catch (error) {
-        throw new Error(error.sqlMessage || error.message)
+        throw new Error(error.sqlMessage)
     }
 } 
