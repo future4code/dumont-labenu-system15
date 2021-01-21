@@ -10,6 +10,6 @@ export const selectStudentBDate = async (id: number): Promise<Students> => {
         return student[0]
         
     } catch (error) {
-        throw new Error(error.sqlMessage || error.message)
+        throw new Error(error.sqlMessage)
     }
 } 
