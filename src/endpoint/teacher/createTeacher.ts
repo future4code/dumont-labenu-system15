@@ -14,19 +14,19 @@ import { formatDate } from '../../utility/formatDate'
 
 // Database function
 export const createTeacher = async (req: Request, res: Response): Promise<void> => {
-    const validKeys = ["name", "email", "birthdate"]
+    const validKeys = ["teacherName", "teacherEmail", "birthDate"]
 
     try {
         res.statusCode = 422
         verifyBodyKeys(req.body, validKeys)
         verifyString(req.body)
 
-        checkDate(req.body.birthdate)
+        checkDate(req.body.birthDate)
 
         const newTeacher: Teacher = {
-            teacher_name: req.body.name,
-            teacher_email: req.body.email,
-            teacher_birth_date: formatDate(req.body.birthdate)
+            teacher_name: req.body.teacherName,
+            teacher_email: req.body.teacherEmail,
+            teacher_birth_date: formatDate(req.body.birthDate)
         }
 
         await insertTeacher(newTeacher)

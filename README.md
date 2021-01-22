@@ -1,4 +1,8 @@
-# LabenuSystem:
+# LabenuSystem - Grupo 15
+
+- Bruno Mugnol
+- Diana Monteiro
+- Nicole Zolnier
 
 ## **POST** Create Student
 
@@ -8,9 +12,9 @@
 
 ```json
 {
-    "student_name": "Billi",
-    "student_email": "bi@li.com",
-    "student_birth_date": "10/10/2000"
+    "studentName": "Billi",
+    "studentEmail": "bi@li.com",
+    "studentBirthDate": "10/10/2000"
 }
 ```
 
@@ -22,7 +26,9 @@
 
 ```json
 {
-    bruno vc que me diga
+    "teacherName": "Darvas",
+    "teacherEmail": "prevent@default.com",
+    "birthDate": "12/02/2021"
 }
 ```
 
@@ -34,9 +40,9 @@
 
 ```json
 {
-    "name": "Porto Velho",
-    "startDate": "08/04/2021",
-    "endDate": "10/10/2021"
+    "missionName": "Porto Velho",
+    "startDate": "20/04/2021",
+    "endDate": "24/10/2021"
 }
 ```
 opcional> "module": 1
@@ -50,7 +56,7 @@ opcional> "module": 1
 
 ```json
 {
-    didi vc que me diga
+    "missionID": 1
 }
 ```
 
@@ -63,7 +69,7 @@ opcional> "module": 1
 
 ```json
 {
-    bruno vc que me diga
+   "missionID": 3
 }
 ```
 
@@ -80,3 +86,65 @@ opcional> "module": 1
     "age": "21 years"
 }
 ```
+
+## **GET** Students From Hobby
+**Path:** `/students/hobby/:id`
+
+**Path Param**: id do hobby
+
+**Body de Resposta:**
+
+```json
+{
+    "hobby": "Baixar filme pirata",
+    "students": [
+        {
+            "student_id": 1,
+            "student_name": "Maricota"
+        },
+        {
+            "student_id": 3,
+            "student_name": "Didi"
+        }
+    ]
+}
+```
+
+## **GET** Students From Mission
+**Path:** `/mission/:id/students`
+
+**Path Param**: id da missão
+
+**Body de Resposta:**
+
+```json
+{
+    "missionName": "Manaus",
+    "students": [
+        {
+            "student_id": 1,
+            "student_name": "Maricota"
+        }
+    ]
+}
+```
+
+## **GET** Teachers from Mission
+**Path:** `/students/hobby/:id`
+
+**Path Param**: id da missão
+
+**Body de Resposta:**
+
+```json
+{
+    "missionName": "Teresina",
+    "teachers": [
+        {
+            "teacher_id": 4,
+            "teacher_name": "Teresinha"
+        }
+    ]
+}
+```
+

@@ -11,11 +11,11 @@ import { insertMission } from '../../data/mission/insertMission'
 // Utilities
 import { checkDate } from '../../utility/checkDate'
 import { formatDate } from '../../utility/formatDate'
-import { verifyBodyKeys, verifyString } from '../../utility/verifier'
+import { verifyBodyKeys } from '../../utility/verifier'
 
 // Database function
 export const createMission = async (req: Request, res: Response): Promise<any> => {
-    const validKeys = ["name", "startDate", "endDate"]
+    const validKeys = ["missionName", "startDate", "endDate"]
 
     try {
         res.statusCode = 422
@@ -26,7 +26,7 @@ export const createMission = async (req: Request, res: Response): Promise<any> =
         checkDate(req.body.endDate)
 
         const newMission: Mission = {
-            mission_name: req.body.name as string,
+            mission_name: req.body.missionName as string,
             start_date: formatDate(req.body.startDate),
             end_date: formatDate(req.body.endDate),
             module: Number(req.body.module) || 1

@@ -7,17 +7,17 @@ import { verifyBodyKeys, verifyNumber } from '../../utility/verifier'
 
 // Database function
 export const addStudentToClass = async (req: Request, res: Response): Promise<any> => {
-    const validKeys = ["mission_id"]
+    const validKeys = ["missionID"]
 
     try {
         verifyBodyKeys(req.body, validKeys)
 
         verifyNumber(req.params.student_id)
-        verifyNumber(req.body.mission_id)
+        verifyNumber(req.body.missionID)
 
         const result = {
-            student_id: req.params.student_id,
-            mission_id: req.body.mission_id
+            student_id: req.params.studentId,
+            mission_id: req.body.missionID
         }
 
         await updateStudentToClass(result)

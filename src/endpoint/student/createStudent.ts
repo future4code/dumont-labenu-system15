@@ -18,10 +18,10 @@ export const createStudents = async (req: Request, res: Response): Promise<any> 
         verifyBodyKeys(req.body, validKeys)
 
         const result = {
-            student_name: req.body.student_name,
-            student_email: req.body.student_email,
-            student_birth_date: await formatStringDate(req.body.student_birth_date),
-            mission_id: req.body.mission_id
+            student_name: req.body.studentName,
+            student_email: req.body.studentEmail,
+            student_birth_date: await formatStringDate(req.body.studentBirthDate),
+            mission_id: req.body.missionId
         }
 
         await insertStudent(result)

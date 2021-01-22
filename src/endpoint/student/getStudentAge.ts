@@ -8,26 +8,26 @@ import { selectStudentBDate } from '../../data/student/selectStudentBDate';
 // Utilities
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { verifyNumber } from '../../utility/verifier';
 
 dayjs.extend(relativeTime)
 
 // Database function
 export const getStudentAge = async (req: Request, res: Response): Promise<void> => {
     try {
-        const id = Number(req.params.id)
+        verifyNumber(req.params.id)
 
-        if(!id){
-            res.statusCode = 404
-            throw new Error("Please provide a student id as a param");
-        } else {
-            const queryResult = await selectStudentBDate(id)
+        const studentId = Number(req.params.id)
 
-            res.status(200).send({
-                studentName: queryResult.student_name,
-                age: dayjs().from(dayjs(queryResult.student_birth_date), true)
-            })
-        }
-    } catch (error) {
+
+        const queryResult = await selectStudentBDate(studentId)
+
+        res.status(200).send({
+            studentName: queryResult.student_name,
+            age: dayjs().from(dayjs(queryResult.student_birth_date), true)
+        })
+    }
+    catch (error) {
         res.status(400).send(error.sqlMessage || error.message)
     }
 }

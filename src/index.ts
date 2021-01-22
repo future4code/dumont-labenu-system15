@@ -22,7 +22,7 @@ import { getStudentsFromHobby } from "./endpoint/student/getStudentsFromHobby"
 
 // Endpoints
 app.post("/student", createStudents)
-app.put("/student/:n startstudent_id", addStudentToClass)
+app.put("/student/:id", addStudentToClass)
 app.get("/student/:id", getStudentAge)
 app.get("/students/hobby/:id", getStudentsFromHobby)
 
