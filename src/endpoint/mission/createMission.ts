@@ -2,16 +2,16 @@
 import { Request, Response } from 'express'
 
 // Type from src/type
-import { Mission } from '../type/mission'
+import { Mission } from '../../type/mission'
 
 
 // Query functions
-import { insertMission } from '../data/insertMission'
+import { insertMission } from '../../data/mission/insertMission'
 
 // Utilities
-import { checkDate } from '../utility/checkDate'
-import { formatDate } from '../utility/formatDate'
-import { verifyBodyKeys, verifyString } from '../utility/verifier'
+import { checkDate } from '../../utility/checkDate'
+import { formatDate } from '../../utility/formatDate'
+import { verifyBodyKeys, verifyString } from '../../utility/verifier'
 
 // Database function
 export const createMission = async (req: Request, res: Response): Promise<any> => {

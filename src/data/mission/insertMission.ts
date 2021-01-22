@@ -1,8 +1,8 @@
 // Database connection
-import { connection } from "./connection";
+import { connection } from "../connection";
 
 //TYPE
-import { Mission } from "../type/mission";
+import { Mission } from "../../type/mission";
 
 export const insertMission = async (mission: Mission): Promise<void> => {
     try {

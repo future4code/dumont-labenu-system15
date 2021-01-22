@@ -1,8 +1,8 @@
 // Database connection
-import { connection } from "./connection";
+import { connection } from "../connection";
 
 //TYPE
-import { Students } from "../type/students"
+import { Students } from "../../type/students"
 
 export const insertStudent = async (student: Students): Promise<void> => {
     try {
